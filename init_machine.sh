@@ -148,6 +148,12 @@ install_brew_package() {
     local package_type=$1
     local package_name=$2
     local description=$3
+
+    if command_exists "$package_name"; then
+        log "${GREEN}$package_name${NC} is already installed."
+        return
+    fi
+    
     if ask_yes_no "Do you want to install ${BOLD}${BLUE}$package_name${NC}? (${MAGENTA}$description${NC})"; then
         log "Installing $package_type ${BOLD}${BLUE}$package_name${NC}..."
         if ! $DRY_RUN; then
@@ -486,6 +492,16 @@ if ask_yes_no "Do you want to install Python?"; then
         progress_bar 15
     else
         log "Would install Python $python_version and set it as global"
+    fi
+fi
+
+if ask_yes_no "Do you want to install Rust?"; then
+    log "Installing Rust..."
+    if ! $DRY_RUN; then
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh || log "Failed to install Rust"
+        progress_bar 10
+    else
+        log "Would install Rust"
     fi
 fi
 
