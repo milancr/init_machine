@@ -312,6 +312,7 @@ done
 
 # Formulas with descriptions and URLs
 formulas=(
+    "postgresql"
     "go"
     "zsh-syntax-highlighting"
     "fd"
