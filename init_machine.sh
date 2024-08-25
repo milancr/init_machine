@@ -70,19 +70,19 @@ ask_yes_no() {
     echo -ne "${BOLD}${question}${NC} ${CYAN}(y/n):${NC} "
     read yn
     case $yn in
-            [Yy]* ) 
+    [Yy]*)
       if $DRY_RUN; then
         log "${GREEN}[DRY RUN] User selected: Yes${NC}"
       fi
       return 0
       ;;
-            [Nn]* ) 
+    [Nn]*)
       if $DRY_RUN; then
         log "${RED}[DRY RUN] User selected: No${NC}"
       fi
       return 1
       ;;
-            * ) echo -e "${YELLOW}Please answer yes or no.${NC}";;
+    *) echo -e "${YELLOW}Please answer yes or no.${NC}" ;;
     esac
   done
 }
@@ -264,6 +264,7 @@ casks=(
   "iterm2"
   "postman"
   "docker"
+  "tor-browser"
 )
 
 cask_descriptions=(
@@ -279,6 +280,7 @@ cask_descriptions=(
   "iTerm2 - Terminal emulator for macOS (https://iterm2.com/)"
   "Postman - API development environment (https://www.postman.com/)"
   "Docker - Platform for building, sharing, and running containerized applications (https://www.docker.com/)"
+  "Tor Browser - Secure browser for anonymous web browsing (https://www.torproject.org/)"
 )
 
 log "Installing cask applications..."

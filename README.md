@@ -104,6 +104,7 @@ This script makes significant changes to your system. While it's designed to be 
 10. [iTerm2](https://iterm2.com/) - Terminal emulator for macOS
 11. [Postman](https://www.postman.com/) - API development environment
 12. [Docker](https://www.docker.com/) - Platform for building, sharing, and running containerized applications
+13. [Tor-Browser](https://www.torproject.org/) - Secure browser for anonymous web browsing
 
 ## Homebrew Formulae (Command Line Tools)
 
